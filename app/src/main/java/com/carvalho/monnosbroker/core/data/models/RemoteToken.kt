@@ -21,8 +21,7 @@ data class RemoteToken(
             symbol = symbol,
             priceIndex,
             lastDayPriceIndexChangePercent,
-            counterAssetRank,
-            false
+            counterAssetRank
         )
     }
 }

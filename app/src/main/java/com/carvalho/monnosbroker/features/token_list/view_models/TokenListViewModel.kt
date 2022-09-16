@@ -18,7 +18,7 @@ class TokenListViewModel(
     private val preLoadCoinDetails: PreLoadCoinDetailsUseCase,
     private val getCoinDetails: GetCoinDetailsUseCase,
     private val refreshTokenList: RefreshTokenListUseCase,
-    private val setTokenAsFavorite: SetCoinAsFavoriteUseCase
+    private val setCoinAsFavorite: SetCoinAsFavoriteUseCase
 ) : BaseViewModel<List<TokenItem>>() {
 
     private var preLoadedList: List<TokenItem> = emptyList()
@@ -81,7 +81,7 @@ class TokenListViewModel(
 
     fun toggleFavoriteToken(tokenItem: TokenItem) {
         viewModelScope.launch {
-            setTokenAsFavorite(
+            setCoinAsFavorite(
                 Coin(
                     name = tokenItem.currencyAbbreviation,
                     isFavorite = tokenItem.isFavorite,
