@@ -30,9 +30,11 @@ abstract class BaseActivity<DataType> : AppCompatActivity(), CoroutineScope {
         super.onCreate(savedInstanceState)
 
         job = Job()
+    }
 
+    protected fun observeStates(bundle: Bundle? = null) {
         launch {
-            viewModel.observeData().collectLatest {
+            viewModel.observeData(bundle).collectLatest {
                 processStates(it)
             }
         }
