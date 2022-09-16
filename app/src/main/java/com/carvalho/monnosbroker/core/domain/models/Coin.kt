@@ -9,4 +9,20 @@ data class Coin(
     val color: String = "",
     val totalSupply: Double = 0.0,
     val circulatingSupply: Double = 0.0
-)
+) {
+    override fun equals(other: Any?): Boolean {
+        return other is Coin && other.name == name
+    }
+
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = 31 * result + fullName.hashCode()
+        result = 31 * result + icon.hashCode()
+        result = 31 * result + blockchainUrl.hashCode()
+        result = 31 * result + isFavorite.hashCode()
+        result = 31 * result + color.hashCode()
+        result = 31 * result + totalSupply.hashCode()
+        result = 31 * result + circulatingSupply.hashCode()
+        return result
+    }
+}

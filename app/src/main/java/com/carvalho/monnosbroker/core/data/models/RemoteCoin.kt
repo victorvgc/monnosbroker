@@ -10,7 +10,7 @@ data class RemoteCoin(
     val blockChainUrl: String? = "",
     val marketType: String? = "",
     val tags: List<String>? = emptyList(),
-    val assetAboutInfo: AssetAboutInfo
+    val assetAboutInfo: AssetAboutInfo? = null
 ) {
     fun toAppModel(): Coin {
         return Coin(
@@ -20,8 +20,8 @@ data class RemoteCoin(
             isFavorite = false,
             color = color ?: "#FFFFFF",
             blockchainUrl = blockChainUrl ?: "",
-            totalSupply = assetAboutInfo.maxSupply,
-            circulatingSupply = assetAboutInfo.circulatingSupply
+            totalSupply = assetAboutInfo?.maxSupply?: 0.0,
+            circulatingSupply = assetAboutInfo?.circulatingSupply ?: 0.0
         )
     }
 }
