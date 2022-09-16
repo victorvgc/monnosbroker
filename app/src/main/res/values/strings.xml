@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Monnos Broker</string>
+
+    <string name="last_day">last 24 hours</string>
+</resources>

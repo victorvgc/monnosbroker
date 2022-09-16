@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Estudos/monnosbroker/app/src/main/res/drawable/divider_dashed.xml" value="0.1655" />
+        <entry key="..\:/Estudos/monnosbroker/app/src/main/res/drawable/ic_fav_selected.xml" value="0.1655" />
+        <entry key="..\:/Estudos/monnosbroker/app/src/main/res/drawable/ic_fav_unselected.xml" value="0.1655" />
+        <entry key="..\:/Estudos/monnosbroker/app/src/main/res/font/montserrat_alternates_light.xml" value="0.3074074074074074" />
+        <entry key="..\:/Estudos/monnosbroker/app/src/main/res/layout/activity_token_list.xml" value="0.15104166666666666" />
+        <entry key="..\:/Estudos/monnosbroker/app/src/main/res/layout/item_token.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

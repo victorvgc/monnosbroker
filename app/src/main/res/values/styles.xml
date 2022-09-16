@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="HeadlineText" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/headline</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="BodyText" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/body1</item>
+    </style>
+
+    <style name="BodyText.BaseCurrencyText"  parent="BodyText">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="BodyText.Small" parent="BodyText">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TokenImageShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

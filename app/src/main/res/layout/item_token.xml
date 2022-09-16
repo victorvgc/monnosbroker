@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.carvalho.monnosbroker.features.domain.models.TokenItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_favorite"
+            bindFavorite="@{item.isFavorite}"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_token_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_token_img"
+            app:srcCompat="@drawable/ic_fav_unselected" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_token_img"
+            bindImage="@{item.currencyIconUrl}"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/ll_token"
+            app:layout_constraintStart_toEndOf="@+id/iv_favorite"
+            app:layout_constraintTop_toTopOf="@+id/ll_token"
+            app:shapeAppearanceOverlay="@style/TokenImageShape"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_base_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="@{item.currencyIndex}"
+            android:textAppearance="@style/BodyText.BaseCurrencyText"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_price_index"
+            app:layout_constraintEnd_toStartOf="@+id/tv_price_index"
+            app:layout_constraintTop_toTopOf="@+id/tv_price_index"
+            tools:text="brl" />
+
+        <TextView
+            android:id="@+id/tv_price_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{item.currencyIndexValue}"
+            android:textAppearance="@style/HeadlineText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ll_token"
+            tools:text="0.0104" />
+
+        <TextView
+            android:id="@+id/tv_price_index_percent"
+            bindIndexPercent="@{item.indexPercent}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:textAppearance="@style/BodyText.Small"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_token"
+            app:layout_constraintEnd_toStartOf="@+id/tv_last_day"
+            tools:text="4.58%" />
+
+        <TextView
+            android:id="@+id/tv_last_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/last_day"
+            android:textAppearance="@style/BodyText.Small"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_token"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_token"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center|start"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_price_index_percent"
+            app:layout_constraintStart_toEndOf="@id/iv_token_img"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/tv_token_abrev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.currencyAbbreviation}"
+                android:textAppearance="@style/HeadlineText"
+                tools:text="bnb" />
+
+            <TextView
+                android:id="@+id/tv_token_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.currencyName}"
+                android:textAppearance="@style/BodyText"
+                tools:text="Binance Coin" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_divider"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:src="@drawable/divider_dashed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
