@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.carvalho.monnosbroker.features.domain.models.TokenItem" />
+            type="com.carvalho.monnosbroker.features.token_list.domain.models.TokenItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

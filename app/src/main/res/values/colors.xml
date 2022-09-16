@@ -12,7 +12,7 @@
 
     <color name="divider">#BFBFBF</color>
 
-    <color name="fav_selected">#F5E000</color>
+    <color name="fav_selected">#FFE431</color>
     <color name="fav_unselected">#E6E6E6</color>
 
     <color name="positive_text">#37CC4D</color>
