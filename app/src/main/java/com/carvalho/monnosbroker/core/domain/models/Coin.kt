@@ -8,8 +8,13 @@ data class Coin(
     var isFavorite: Boolean,
     val color: String = "",
     val totalSupply: Double = 0.0,
-    val circulatingSupply: Double = 0.0
+    val circulatingSupply: Double = 0.0,
 ) {
+    val circulationPercent: Float = if (totalSupply != 0.0)
+        ((circulatingSupply / totalSupply) * 100.0).toFloat()
+    else
+        0f
+
     override fun equals(other: Any?): Boolean {
         return other is Coin && other.name == name
     }
