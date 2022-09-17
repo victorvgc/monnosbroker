@@ -9,6 +9,10 @@
         <item name="android:layout_marginBottom">8dp</item>
     </style>
 
+    <style name="HeadlineText.Centered" parent="HeadlineText">
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="BodyText" parent="TextAppearance.AppCompat.Body1">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>

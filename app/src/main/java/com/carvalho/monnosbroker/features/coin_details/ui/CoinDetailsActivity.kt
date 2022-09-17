@@ -75,19 +75,34 @@ class CoinDetailsActivity : BaseActivity<CoinDetailsViewData>() {
             token = state.data.token
         }.executePendingBindings()
 
-        if (state.data.coin.totalSupply != 0.0) {
-            val circulating = state.data.coin.circulatingSupply / state.data.coin.totalSupply
-            val total = 100.0f - circulating.toFloat()
+        val circulationPercent = state.data.coin.circulationPercent
+
+        if (circulationPercent != 0.0f) {
+            val total = 100.0f - circulationPercent
 
             val entries = mutableListOf<PieEntry>()
-            entries.add(PieEntry(circulating.toFloat(), "Circulating supply"))
-            entries.add(PieEntry(total, "Total supply"))
+            entries.add(PieEntry(circulationPercent, "%"))
+            entries.add(PieEntry(total, "%"))
 
-            val pieSet = PieDataSet(entries, "Supply")
+            val pieSet = PieDataSet(entries, "").apply {
+                this.setColors(
+                    this@CoinDetailsActivity.resources.getColor(R.color.primary, null),
+                    this@CoinDetailsActivity.resources.getColor(R.color.primary_dark, null)
+                )
+                this.valueTextSize =
+                    this@CoinDetailsActivity.resources.getDimension(R.dimen.pie_chart_legend_text_size)
+                this.valueTextColor =
+                    this@CoinDetailsActivity.resources.getColor(R.color.white, null)
+            }
+
             val pieData = PieData(pieSet)
 
+            binding.tvChartDescription.text =
+                "Circulating Supply: ${String.format("%.1f", circulationPercent)}%"
+
             binding.supplyChart.data = pieData
-            binding.supplyChart.setTouchEnabled(false)
+            binding.supplyChart.legend.isEnabled = false
+            binding.supplyChart.description.isEnabled = false
             binding.supplyChart.invalidate()
         } else {
             binding.chartCard.hide()
